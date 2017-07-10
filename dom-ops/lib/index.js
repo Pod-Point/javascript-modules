@@ -179,7 +179,7 @@ function nodesToArray(nodes) {
 }
 
 function whenReady(callback) {
-    if (document.readyState != 'loading') {
+    if (document.readyState != 'loading' && document.body != null) {
         callback();
     } else {
         document.addEventListener('DOMContentLoaded', callback);
