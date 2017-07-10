@@ -31,7 +31,7 @@ exports.whenReady = whenReady;
     ==============================================================
 */
 function select(selector) {
-    var root = arguments.length <= 1 || arguments[1] === undefined ? document : arguments[1];
+    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 
     var selection = root.querySelectorAll(selector);
 
@@ -39,7 +39,7 @@ function select(selector) {
 }
 
 function selectFirst(selector) {
-    var root = arguments.length <= 1 || arguments[1] === undefined ? document : arguments[1];
+    var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 
     return root.querySelector(selector);
 }
@@ -91,7 +91,7 @@ function child(element, selector) {
     ==============================================================
 */
 function create() {
-    var tag = arguments.length <= 0 || arguments[0] === undefined ? 'div' : arguments[0];
+    var tag = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'div';
 
     return document.createElement(tag);
 }
